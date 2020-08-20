@@ -8,5 +8,11 @@
 
 ```
 npm i
+npx ts-node ./utils/createArrayFile/main.ts --size=1000 --output='../genFiles/arr1000.json'
+```
+
+Для получения справки:
+
+```
 npx ts-node ./utils/createArrayFile/main.ts --help
 ```

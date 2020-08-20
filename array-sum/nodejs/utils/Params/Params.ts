@@ -1,3 +1,5 @@
+import { OUTPUT_PARAM, SIZE_PARAM, HELP_PARAM } from '../constants';
+
 /**
  * Интерфейс с описанием типов возвращаемого результат
  *
@@ -5,7 +7,7 @@
  */
 interface IParamsResult {
   status: boolean;
-  body?: string;
+  body: string | null;
 }
 
 /**
@@ -30,38 +32,32 @@ class Params {
     params: string[],
     message: string,
   ) => {
-    let result: IParamsResult = { status: false, body: undefined };
+    let result: IParamsResult = { status: false, body: null };
 
     for (let i = 0, maxLength = params.length; i < maxLength; i++) {
       if (params[i].indexOf(checkParam) !== -1) {
         switch (checkParam) {
-          case '--help':
-            result = {
+          case HELP_PARAM:
+            return {
               status: true,
               body: message,
             };
-            break;
-          case '--input=':
-            result = {
+          case SIZE_PARAM:
+            return {
               status: true,
               body: this.setParam(checkParam, params[i]),
             };
-            break;
-          case '--output=':
-            result = {
+          case OUTPUT_PARAM:
+            return {
               status: true,
               body: this.setParam(checkParam, params[i]),
             };
-            break;
-          case '--delete':
-            result = { status: true, body: 'DELETE_INPUT_FOLDER' };
-            break;
+
           default:
-            result = { status: false, body: undefined };
-            break;
+            return { status: false, body: null };
         }
       } else if (params[i].indexOf(checkParam) === -1) {
-        result = { status: false, body: undefined };
+        result = { status: false, body: null };
       }
     }
 
@@ -76,11 +72,12 @@ class Params {
       checkParam,
       execParams,
       `Правила использования:
-    --input=PATH_NAME    -- указывается полный путь к каталогу, который требует проверки;
-    --help               -- справка.
+    ${OUTPUT_PARAM}PATH_NAME    -- указывается полный путь для создаваемого файла;
+    ${SIZE_PARAM}               -- указывается размерность создаваемого массива;
+    ${HELP_PARAM}                -- справка.
 
     Последовательность установки параметров любая.
-    Параметр '--help' имеет максимальный приоритет.
+    Параметр '${HELP_PARAM}' имеет максимальный приоритет.
     Не документированные параметры игнорируются.`,
     );
 

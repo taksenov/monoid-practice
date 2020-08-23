@@ -3,6 +3,7 @@ import {
   SIZE_PARAM,
   HELP_PARAM,
   SECRET_PARAM,
+  INPUT_PARAM,
 } from '../constants';
 
 /**
@@ -47,15 +48,8 @@ class Params {
               status: true,
               body: message,
             };
-          // return {
-          //   status: true,
-          //   body: this.setParam(checkParam, params[i]),
-          // };
-          // return {
-          //   status: true,
-          //   body: this.setParam(checkParam, params[i]),
-          // };
           case SIZE_PARAM:
+          case INPUT_PARAM:
           case OUTPUT_PARAM:
           case SECRET_PARAM:
             return {

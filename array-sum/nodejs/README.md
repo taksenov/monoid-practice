@@ -55,5 +55,5 @@ npx ts-node ./utils/createArrayFile/main.ts --help
 Команда запуска:
 
 ```bash
-npx ts-node ./app/app.ts --secret=1000 --input='../genFiles/arr1000.json' --secret=Use_Your_SCRT_For_Decrypt
+npx ts-node ./app/app.ts --input='../genFiles/arr1000.json' --secret=Use_Your_SCRT_For_Decrypt
 ```

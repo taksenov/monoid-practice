@@ -30,5 +30,6 @@ yarn-error.log*
 # client Build
 /client/build
 
-# testApp
-/testApp
+# Generated data
+/genFiles
+/array-sum/genFiles

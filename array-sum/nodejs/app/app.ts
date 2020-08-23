@@ -1,4 +1,4 @@
-import * as data from '../../genFiles/arr1000000.json';
+import * as data from '../../genFiles/arr100000.json';
 
 // Проверочные данные из файла
 const refSum = data['total-sum'];

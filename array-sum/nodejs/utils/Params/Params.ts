@@ -47,12 +47,17 @@ class Params {
               status: true,
               body: message,
             };
+          // return {
+          //   status: true,
+          //   body: this.setParam(checkParam, params[i]),
+          // };
+          // return {
+          //   status: true,
+          //   body: this.setParam(checkParam, params[i]),
+          // };
           case SIZE_PARAM:
-            return {
-              status: true,
-              body: this.setParam(checkParam, params[i]),
-            };
           case OUTPUT_PARAM:
+          case SECRET_PARAM:
             return {
               status: true,
               body: this.setParam(checkParam, params[i]),

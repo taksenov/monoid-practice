@@ -1,4 +1,9 @@
-import { OUTPUT_PARAM, SIZE_PARAM, HELP_PARAM } from '../constants';
+import {
+  OUTPUT_PARAM,
+  SIZE_PARAM,
+  HELP_PARAM,
+  SECRET_PARAM,
+} from '../constants';
 
 /**
  * Интерфейс с описанием типов возвращаемого результат
@@ -74,6 +79,7 @@ class Params {
       `Правила использования:
     ${OUTPUT_PARAM}PATH_NAME    -- указывается полный путь для создаваемого файла;
     ${SIZE_PARAM}               -- указывается размерность создаваемого массива;
+    ${SECRET_PARAM}               -- указывается пароль для подписывания данных;
     ${HELP_PARAM}                -- справка.
 
     Последовательность установки параметров любая.

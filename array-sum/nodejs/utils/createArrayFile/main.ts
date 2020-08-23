@@ -16,7 +16,7 @@ const checkParams = new Params();
 const helpParam = checkParams.handleCheckHelpParam(HELP_PARAM, execParams);
 if (helpParam.status === true) {
   console.log(helpParam.body);
-  process.exit();
+  process.exit(0);
 }
 
 const sizeParam = checkParams.handleCheckWorkParams(SIZE_PARAM, execParams);
@@ -50,7 +50,6 @@ const saltRounds = 3;
 function getRandomInt(max: number) {
   return Math.floor(Math.random() * Math.floor(max));
 }
-
 
 let totalSum = 0;
 

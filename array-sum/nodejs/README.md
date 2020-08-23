@@ -43,7 +43,7 @@ npx ts-node ./utils/createArrayFile/main.ts --size=1000 --output='../genFiles/ar
 npx ts-node ./utils/createArrayFile/main.ts --help
 ```
 
-## calculateDataSyncronous
+## calculateData
 
 Расчет данных, полученных в файле созданном в разделе **createArrayFile**. Время
 в бейнчмарке рассчитывается с повышенной точностью.

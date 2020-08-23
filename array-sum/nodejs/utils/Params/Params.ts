@@ -1,4 +1,9 @@
-import { OUTPUT_PARAM, SIZE_PARAM, HELP_PARAM } from '../constants';
+import {
+  OUTPUT_PARAM,
+  SIZE_PARAM,
+  HELP_PARAM,
+  SECRET_PARAM,
+} from '../constants';
 
 /**
  * Интерфейс с описанием типов возвращаемого результат
@@ -42,12 +47,17 @@ class Params {
               status: true,
               body: message,
             };
+          // return {
+          //   status: true,
+          //   body: this.setParam(checkParam, params[i]),
+          // };
+          // return {
+          //   status: true,
+          //   body: this.setParam(checkParam, params[i]),
+          // };
           case SIZE_PARAM:
-            return {
-              status: true,
-              body: this.setParam(checkParam, params[i]),
-            };
           case OUTPUT_PARAM:
+          case SECRET_PARAM:
             return {
               status: true,
               body: this.setParam(checkParam, params[i]),
@@ -74,6 +84,7 @@ class Params {
       `Правила использования:
     ${OUTPUT_PARAM}PATH_NAME    -- указывается полный путь для создаваемого файла;
     ${SIZE_PARAM}               -- указывается размерность создаваемого массива;
+    ${SECRET_PARAM}               -- указывается пароль для подписывания данных;
     ${HELP_PARAM}                -- справка.
 
     Последовательность установки параметров любая.
